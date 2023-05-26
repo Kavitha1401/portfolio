@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="iconss.png" width="50px" height="50px">
+                    <h3>Developer</h3>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="about-container">
+            <div class="desc">
+                <p class="heading-about">About Me</p>
+                <div class="desc-1">
+                    <p>Exepeienced web Developer with expertise in front-end development. Skilled in creating responsive websites and web applications using modern technologies. String problem solving and teamwork abilities. Passionate about delivering high-quality and intuitive user experiences.</p>
+                </div>
+                <div class="links-2">
+                    <p  class="tab-links active-link" style="font-weight: bold;font-size: large;" onclick="show('skills')">Skills</p>
+                    <p class="tab-links active-link" style="font-weight: bold;font-size: large;" onclick="show('education')">Education</p>
+                    <p class="tab-links active-link" style="font-weight: bold;font-size: large;" onclick="show('certificates')">Certificates</p>
+                </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>C++/C</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>Machine Learning</li>
+                            <li>Tableau</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="education">
+                        <ul>
+                            <li><span>Banglore Institute Of Technology</span></li>
+                            <li>B.E/B.Tech</li>
+                            <li>Information Science and Engineering</li>
+                            <li>CGPA: 9.4</li>
+                            <li>Graduation: June 2024</li><br>
+                            <li><span>Soundarya Composite Pu College</span></li>
+                            <li>Pre University</li>
+                            <li>Percentage: 93.167</li>
+                            <li>Graduation: March 2020</li><br>
+                            <li><span>Preethi English Medium High School</span></li>
+                            <li>Secondary School</li>
+                            <li>Percentage: 97.6</li>
+                            <li>Graduation: April 2018</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="certificates">
+                        <ul>
+                            <li style="margin-bottom: 20px;">HTML course completion certificate</li>
+                            <li style="margin-bottom: 20px;">web design completion certifcate</li>
+                            <li style="margin-bottom: 20px;">Embedded System winning certifcate</li>
+                            <li>Machine Learning workshop completion</li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="img">
+                <img src="WhatsApp Image 2023-05-24 at 22.53.47.jpeg" width="400px" height="600px">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function show(id)
+        {
+            for(tablink of tablinks)
+            {
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents)
+            {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(id).classList.add("active-tab")
+        }
+
+    </script>
+</body>
+</html>

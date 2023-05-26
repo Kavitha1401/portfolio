@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/00d11f780b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="iconss.png" width="50px" height="50px">
+                    <h3>Developer</h3>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="contact-left">
+            <h1 class="heading">Contact me</h1>
+            <p><i class="fa-regular fa-envelope"></i></i>contact@kavitha.com</p>
+            <p><i class="fa-solid fa-phone"></i>8618363350</p>
+            <div class="socials">
+                <a href="https://www.facebook.com/kavitha1030?mibextid=ZbWKwL" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/kavitha-reddy-6a475b25b" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Kavitha1401?tab=repositories" class="github"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="telegram"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <a href="Resume_kavitha.pdf" download class="btn2">download cv</a>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name"  placeholder="Your name" required>
+                <input type="email" name="mail" placeholder="your mail" required>
+                <textarea name="message" cols="30" rows="10" placeholder="your message"></textarea>
+                <button type="submit" class="btn2">submit</button>
+            </form>
+            <div id="msg">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @ B Kavitha. Made with <i class="fa-solid fa-heart"></i></p>
+    </div>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzgS3ObNKoaz-15wrnzMKbMC_D04KTpYeLzsMb-5bWtZyNCcfhwqvq0nZ9RlJpDmb1f_A/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML="message succesfully sent"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
